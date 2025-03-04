@@ -12,6 +12,7 @@ const ProductSchema: Schema = new Schema({
     productStock: { type: Number, required: true },
     productCreatedDate: { type: Date, required: true, default: Date.now },  
     productImage: [{ type: String, required: true }]
-});
+},
+{collection: "products"});
 
 export default mongoose.model<IProduct>("Product", ProductSchema);

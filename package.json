@@ -2,9 +2,12 @@
   "name": "productsapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "nodemon app.ts",
+    "dev": "nodemon app.ts"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.9",
+    "@types/multer": "^1.4.12",
     "@types/node": "^22.13.8",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin": "^1.0.1",
