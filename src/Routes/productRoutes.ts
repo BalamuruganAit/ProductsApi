@@ -1,23 +1,23 @@
 import express from "express";
 import { 
-  createProduct, 
   createProductWithMultipleImages,
   getAllProducts,  
   getProductByStock, 
   getProductByDate, 
-  updateProductById, 
-  deleteProductById, 
+  updateProductById, getProductByName,
+  deleteProductById, getProductById,
   uploadSingle, uploadMultiple,} from "../Controller/productController";
 const { protect } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.post("/product", uploadSingle, createProduct);
-router.post("/product/multiple", uploadMultiple, createProductWithMultipleImages);
+router.post("/product", uploadMultiple, createProductWithMultipleImages);
 router.get("/getAllProduct", getAllProducts);
+router.post('/getProductByName',getProductByName)
 router.get("/getProductByStock/:stock", getProductByStock);
-router.get("/getProductByDate/:date", getProductByDate);
-router.put("/updateProduct:id", protect, updateProductById);
-router.delete("/deleteProduct:id", protect, deleteProductById);
+router.post("/getProductByDate", getProductByDate);
+router.get("/getProductById/:id", getProductById);
+router.put("/updateProduct/:id",  updateProductById);
+router.delete("/deleteProduct/:id",  deleteProductById);
 
 export default router;
